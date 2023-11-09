@@ -1,24 +1,38 @@
 #include <stdio.h>
+int arr[], int size)
+{
+
+    int i, j;
+
+    for (i = 0; i < size; i++) {
+
+        for (j = i + 1; j < size; j++) {
+
+            if (arr[i] <= arr[j])
+
+                break;
+
+        }
+
+        if (j == size) // the loop didn't break
+
+            printf("%d ", arr[i]);
+
+    }
+}
+ 
+/* Driver program to test above function */
+
 int main()
 {
-    int n,i,j;
+    int n;
     scanf("%d",&n);
     int arr[n+2];
-    for(i=0;i<n;i++)
+    for(int i=0;i<n;i++)
     {
         scanf("%d",&arr[i]);
     }
-    for(i=0;i<n;i++)
-    {
-        for (j=i+1;j<n;j++)
-        {
-            if (arr[i] <= arr[j])
-                break;
-        }
-    }
-    if (j==n)
-    {
-        printf("%d ", arr[i]);
-    }
+    printLeaders(arr, n);
 
+    return 0;
 }
