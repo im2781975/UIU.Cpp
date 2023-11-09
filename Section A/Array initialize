@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int i, k = 0, l = 0, m = 3, n = 3; // Initialize m and n with appropriate values
+    int a[3][3] = {0}; // Define the dimensions of the array and optionally initialize it
+
+    while (k < m && l < n) {
+        for (i = l; i < n; ++i) {
+            printf("%d ", a[k][i]); // Added a space for better formatting
+        }
+        k++;
+        for (i = k; i < m; ++i) {
+            printf("%d ", a[i][n - 1]); // Added a space for better formatting
+        }
+        n--;
+        if (k < m) {
+            for (i = n - 1; i >= l; --i) {
+                printf("%d ", a[m - 1][i]); // Added a space for better formatting
+            }
+            m--;
+        }
+        if (l < n) {
+            for (i = m - 1; i >= k; --i) {
+                printf("%d ", a[i][l]); // Added a space for better formatting
+            }
+            l++;
+        }
+    }
+    return 0;
+}
+
